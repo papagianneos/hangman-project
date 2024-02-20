@@ -68,6 +68,8 @@
         wordContentBox.style.transition = '1s';
         wordContentBox.style.width = '50%';
         wordContentBox.style.margin = '5px';
+        wordContentBox.style.borderRadius = '5%';
+        wordContentBox.style.backgroundColor = 'rgba(0, 0, 0, .5)';
 
         let hangmanImageBox = document.createElement('div');
         hangmanImageBox.id = 'hangmanImageBox';
@@ -75,6 +77,7 @@
         hangmanImageBox.style.width = '50%';
         hangmanImageBox.style.margin = '5px';
         hangmanImageBox.style.backgroundColor = 'black';
+
         document.getElementById('boxesHolder').style.display = 'flex'; // bug fix
         document.getElementById('boxesHolder').appendChild(hangmanImageBox);
         // =======================================================================
