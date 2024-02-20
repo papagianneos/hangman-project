@@ -65,12 +65,15 @@
         let wordContentBox = document.getElementById('periexomeno');
         wordContentBox.style.transition = '1s';
         wordContentBox.style.width = '50%';
+        wordContentBox.style.margin = '5px';
 
         let hangmanImageBox = document.createElement('div');
         hangmanImageBox.id = 'hangmanImageBox';
         hangmanImageBox.className = 'box';
         hangmanImageBox.width = '50%';
-        mainScreen.appendChild(wordContentBox);
+        hangmanImageBox.style.margin = '5px';
+        hangmanImageBox.style.backgroundColor = 'black';
+        mainScreen.appendChild(hangmanImageBox);
         // =======================================================================
 
         // TO DO: Lives code
