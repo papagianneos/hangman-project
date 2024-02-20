@@ -59,7 +59,7 @@
 
         // Δες αν η λέξη περιέχει χαρακτήρα που δεν επιτρέπεται.
         for (var character_ of chosenWord.split('')) {
-            if (!(character_ in ALLOWED_CHARACTERS)) {
+            if (!(ALLOWED_CHARACTERS.indexOf(character_) in ALLOWED_CHARACTERS)) {
                 alert('Η λέξη πρέπει μόνο να περιέχει γράμματα ή αριθμούς.');
                 return;
             }
@@ -117,7 +117,7 @@
             var character = String.fromCharCode(keyNumber); // μετατροπή σε string
 
             // Αν είναι ο ίδιος χαρακτήρας με πριν μην κάνεις τίποτα.
-            if (character == lastGivenCharacter || !(character in ALLOWED_CHARACTERS)) return;
+            if (character == lastGivenCharacter || !(ALLOWED_CHARACTERS.indexOf(character) in ALLOWED_CHARACTERS)) return;
 
             // Αν είναι ο χαρακτήρας στην λέξη
             if (character in chosenWord.split('')) {
