@@ -9,7 +9,8 @@
   }
 
   let wordThing = document.createElement('h2');
-  wordThing.style.letterSpacing = '2px';
+  wordThing.style.letterSpacing = '4px';
+  wordThing.style.pointerEvents = 'none';
 
   for (var i = 0; i < chosenWord.length; i++) {
     wordThing.innerText += space;
