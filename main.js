@@ -85,7 +85,7 @@
     wordInput.type = 'text';
     wordInput.id = 'wordInput';
     wordInput.placeholder = 'Εισάγετε μία λέξη εδώ..';
-    wordInput.addEventListener('keydown', (e) => {
+    startButton.addEventListener('keydown', (e) => {
         if (e.keyCode == 27) document.getElementById('startButton').click();
     });
 
