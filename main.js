@@ -61,7 +61,7 @@
         for (var character_ of ALLOWED_CHARACTERS) {
             if (!(character_ in ALLOWED_CHARACTERS)) {
                 alert('Η λέξη πρέπει μόνο να περιέχει γράμματα ή αριθμούς.');
-                break;
+                return;
             }
         }
 
