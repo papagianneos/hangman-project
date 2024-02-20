@@ -1,5 +1,5 @@
 (() => {
-    let lives = 5, lastGivenCharacter;
+    let lives = 5;
 
     const ALLOWED_CHARACTERS = 'ΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩαβγδεζηθικλμνξοπρστυφχψωabcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'.split('');
 
@@ -93,7 +93,7 @@
 
         let lettersThatNotInWordText = document.createElement('span');
         lettersThatNotInWordText.style.position = 'absolute';
-        lettersThatNotInWordText.style.bottom = '300px';
+        lettersThatNotInWordText.style.bottom = '100px';
         lettersThatNotInWordText.style.fontSize = '50px';
         lettersThatNotInWordText.id = 'notInWordThing';
         lettersThatNotInWordText.style.color = 'red';
@@ -116,11 +116,13 @@
 
             var character = String.fromCharCode(keyNumber); // μετατροπή σε string
 
+            const alreadyGivenCharacters = document.getElementById('notInWordThing').replace(',', '').split('');
+
             // Αν είναι ο ίδιος χαρακτήρας με πριν μην κάνεις τίποτα.
-            if (character == lastGivenCharacter || !(ALLOWED_CHARACTERS.indexOf(character) in ALLOWED_CHARACTERS)) return;
+            if (alreadyGivenCharacters.indexOf(character) in alreadyGivenCharacters || !(ALLOWED_CHARACTERS.indexOf(character) in ALLOWED_CHARACTERS)) return;
 
             // Αν είναι ο χαρακτήρας στην λέξη
-            if (character in chosenWord.split('')) {
+            if (chosenWord.indexOf(character) in chosenWord.split('')) {
                 for (var letter of wordThing) {
                     let index = chosenWord.indexOf(letter);
                     wordThing.innerText = wordThing.innerText.replace(wordThing[index], letter);
@@ -128,10 +130,8 @@
             }
             else {
                 // TO DO: LIVES CODE
-                document.getElementById('notInWordThing').innerText += `${character}, `
+                document.getElementById('notInWordThing').innerText += ` ${character} `
             }
-
-            lastGivenCharacter = character;
         });
         // =======================================================================
 
