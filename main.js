@@ -55,6 +55,9 @@
         }
 
         // TO DO: Lives code
+        let livesText = document.getElementById('livesText');
+        livesText.innerText = `Lives: ${lives}`;
+        livesText.classList.remove('hidden');
 
         // Δημιούργησε το μενού με τα κενά
         let wordThing = document.createElement('h2');
