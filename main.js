@@ -87,15 +87,14 @@
     wordInput.type = 'text';
     wordInput.id = 'wordInput';
     wordInput.placeholder = 'Εισάγετε μία λέξη εδώ..';
-    startButton.addEventListener('keydown', (e) => {
-        if (e.keyCode == 27) document.getElementById('startButton').click();
-    });
-
     // Play Button
     let startButton = document.createElement('button');
     startButton.appendChild(document.createTextNode('Play'));
     startButton.id = 'startButton';
     startButton.onclick = setup;
+    startButton.addEventListener('keydown', (e) => {
+        if (e.keyCode == 27) document.getElementById('startButton').click();
+    });
 
     addToPage(wordInput);
     addToPage(startButton);
