@@ -115,7 +115,7 @@
             }
             else if (e.which) keyNumber = e.which;
 
-            var character = String.fromCharCode(keyNumber); // μετατροπή σε string
+            var character = String.fromCharCode(keyNumber).toLowerCase(); // μετατροπή σε string
 
             // Αν είναι ο ίδιος χαρακτήρας με πριν μην κάνεις τίποτα.
             if (alreadyGivenCharacters.includes(character) || !(ALLOWED_CHARACTERS.indexOf(character) in ALLOWED_CHARACTERS)) return;
@@ -133,7 +133,7 @@
             }
             else {
                 // TO DO: LIVES CODE AND BETTER THING V
-                document.getElementById('notInWordThing').innerText += ` ${character} `;
+                document.getElementById('notInWordThing').innerText += ` ${character.toUpperCase()} `;
             }
 
             alreadyGivenCharacters.push(character);
