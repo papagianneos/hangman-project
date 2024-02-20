@@ -95,6 +95,7 @@
         // Δες αν το πλήκτρο που πάτησε ο παίχτης είναι γράμμα της λέξης..
         // =======================================================================
         document.addEventListener('keydown', (e) => {
+            if (!gameStarted) return;
             var keyNumber;
             if (window.event) {                
                 keyNumber = e.keyCode;
