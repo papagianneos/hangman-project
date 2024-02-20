@@ -79,8 +79,16 @@
         hangmanImageBox.style.borderRadius = '5px';
         hangmanImageBox.style.backgroundColor = 'black';
 
+        let lettersThatNotInWordText = document.createElement('span');
+        lettersThatNotInWordText.style.position = 'absolute';
+        lettersThatNotInWordText.style.bottom = '300px';
+        lettersThatNotInWordText.style.fontSize = '50px';
+        lettersThatNotInWordText.id = 'notInWordThing';
+        lettersThatNotInWordText.style.color = 'red';
+
         document.getElementById('boxesHolder').style.display = 'flex'; // bug fix
         document.getElementById('boxesHolder').appendChild(hangmanImageBox);
+        mainScreen.appendChild(lettersThatNotInWordText);
         // =======================================================================
 
         // =======================================================================
@@ -93,10 +101,10 @@
             } 
             else if (e.which) keyNumber = e.which;
 
-            keyNumber = String.fromCharCode(keyNumber); // μετατροπή σε string
+            var character = String.fromCharCode(keyNumber); // μετατροπή σε string
 
             // Αν είναι ο χαρακτήρας στην λέξη
-            if (keyNumber in chosenWord) {
+            if (character in chosenWord) {
                 for (var letter of wordThing) {
                     let index = chosenWord.indexOf(letter);
                     wordThing.innerText = wordThing.innerText.replace(wordThing[index], letter);
@@ -104,6 +112,7 @@
             }
             else {
                 // TO DO: LIVES CODE
+                document.getElementById('notInWordThing').innerText += `${character}, `
             }
         });
         // =======================================================================
