@@ -19,6 +19,10 @@
         document.getElementById('periexomeno').appendChild(element);
     }
 
+    const removeFromPage = (element) => {
+        document.getElementById('periexomeno').removeChild(element);
+    }
+
     // Συνάρτηση αφαίρεσης άχρηστων κενών
     const removeRedundantSpaces = str => {
         const searchTerm2 = "   ", // Triple spaces.
@@ -55,6 +59,8 @@
             wordThing.innerText += '_';
         }
 
+        removeFromPage(startButton);
+        removeFromPage(wordInput);
         addToPage(wordThing);
         gameStarted = true;
         music.menu.pause();
