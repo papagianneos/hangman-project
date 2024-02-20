@@ -22,7 +22,7 @@
 
     const setup = () => {
         // Δες αν ο χρήστης έδωσε λέξη
-        chosenWord = removeRedundantSpaces(document.getElementById('thingyUenterword').value);
+        chosenWord = removeRedundantSpaces(document.getElementById('wordInput').value);
         switch (true) {
             case chosenWord == '' || chosenWord == ' ':
                 alert('Ρε φίλε πρέπει να δώσεις και μία κανονική λέξη..');
@@ -46,7 +46,7 @@
 
     let wordInput = document.createElement('input');
     wordInput.type = 'text';
-    wordInput.id = 'thingyUenterword';
+    wordInput.id = 'wordInput';
     wordInput.placeholder = 'Εισάγετε μία λέξη εδώ..';
     wordInput.addEventListener('keypress', (e) => {
         if (e.keyCode == 27) document.getElementById('startButton').click();
