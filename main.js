@@ -123,16 +123,25 @@
 
             // Αν είναι ο χαρακτήρας στην λέξη
             if (chosenWord.indexOf(character) in chosenWord.split('')) {
-                let decoded = '';
-                for (var letter of wordThing.secretText.split('')) {
-                    for (var i = 0; i < 10; i++) {
-                        if (letter.includes(JSON.stringify(i))) {
-                            letter = letter.replace(letter, '_');
+                for (var letter of chosenWord.split('')) {
+                    if (letter == character) {
+                        wordThing.secretText = wordThing.secretText.replace(JSON.stringify(chosenWord.split('').indexOf(character)), letter);
+                        // -----------------------------------------------------
+                        // number remover
+                        // -----------------------------------------------------
+                        let decoded = '';
+                        for (var letter of wordThing.secretText.split('')) {
+                            for (var i = 0; i < 10; i++) {
+                                if (letter.includes(JSON.stringify(i))) {
+                                    letter = letter.replace(letter, '_');
+                                }
+                            }
+                            decoded += letter;
                         }
+                        wordThing.innerText = decoded;
+                        // -----------------------------------------------------
                     }
-                    decoded += letter;
                 }
-                wordThing.innerText = decoded;
             }
             else {
                 // TO DO: LIVES CODE
