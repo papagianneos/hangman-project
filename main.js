@@ -42,13 +42,6 @@
         return tmpStr;
     };
 
-    const printWord = () => {
-        let word = '';
-        for (var letter of secretWord) word += letter;
-
-        document.getElementsByTagName('h2')[0].innerText = word;
-    }
-
     let hintText = document.createElement('span');
     hintText.appendChild(document.createTextNode('Πατήστε το κουμπί «Play» ή πατήστε το πλήκτρο «Enter» για να αρχίσετε το παιχνίδι.'));
 
@@ -133,7 +126,9 @@
                 if (character == chosenWord[index]) {
                     secretWord[index] = character;
                     wordThing.innerText = ''; // reset
-                    printWord();
+                    let word = '';
+                    for (var letter of secretWord) word += letter;
+                    wordThing.innerText = word;
                 }
             }
             else {
@@ -158,7 +153,9 @@
         // Εμφάνισε το πρώτο γράμμα.
         secretWord[0] = chosenWord[0].toLowerCase();
         for (var i = 0; i < chosenWord.length; i++) secretWord.push('_');
-        printWord();
+        let word = '';
+        for (var letter of secretWord) word += letter;
+        wordThing.innerText = word;
 
         removeFromPage(startButton);
         removeFromPage(wordInput);
