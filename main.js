@@ -73,7 +73,7 @@
         hangmanImageBox.style.width = '50%';
         hangmanImageBox.style.margin = '5px';
         hangmanImageBox.style.backgroundColor = 'black';
-        mainScreen.appendChild(hangmanImageBox);
+        document.getElementById('boxesHolder').appendChild(hangmanImageBox);
         // =======================================================================
 
         // TO DO: Lives code
