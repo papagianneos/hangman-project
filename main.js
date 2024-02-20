@@ -167,7 +167,7 @@
             wordThing.innerText += '_';
         }
 
-        for (var k = 1; k < (chosenWord.length - 1); k++) {
+        for (var k = 1; k < chosenWord.length; k++) {
             wordThing.secretText += JSON.stringify(k);
         }
 
