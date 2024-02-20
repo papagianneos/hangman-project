@@ -39,6 +39,9 @@
         return tmpStr;
     };
 
+    let hintText = document.createElement('span');
+    hintText.appendChild(document.createTextNode('Πατήστε το κουμπί «Play» ή πατήστε το πλήκτρο «Enter» για να αρχίσετε το παιχνίδι.'))
+
     const setup = () => {
         if (gameStarted) return;
 
@@ -61,6 +64,7 @@
 
         removeFromPage(startButton);
         removeFromPage(wordInput);
+        removeFromPage(hintText);
         addToPage(wordThing);
         gameStarted = true;
         music.menu.pause();
@@ -86,4 +90,5 @@
 
     addToPage(wordInput);
     addToPage(startButton);
+    addToPage(hintText);
 })();
