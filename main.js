@@ -61,6 +61,7 @@
         let mainScreen = document.getElementById('mainScreen');
         mainScreen.style.transition = '1s';
         mainScreen.style.width = '100%';
+        mainScreen.style.borderRadius = '0';
 
         let wordContentBox = document.getElementById('periexomeno');
         wordContentBox.style.transition = '1s';
