@@ -128,9 +128,9 @@
                 for (var letter of wordThing.secretText.split('')) {
                     let index = chosenWord.split('').indexOf(letter);
                     wordThing.secretText = wordThing.secretText.replace(JSON.stringify(index), letter);
-                    for (var j = 0; j < wordThing.secretText.length; j++) {
+                    for (var j of wordThing.secretText.split('')) {
                         if ('0123456789'.split('').includes(j)) {
-                            someVariableIdkHowToName = wordThing.secretText.replace(wordThing.secretText[j], '_');
+                            someVariableIdkHowToName = wordThing.secretText.replace(j, '_');
                         }
                     }
                     wordThing.innerText = someVariableIdkHowToName;
