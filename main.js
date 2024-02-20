@@ -59,4 +59,5 @@
     startButton.onclick = setup;
 
     addToPage(wordInput);
+    addToPage(startButton);
 })();
