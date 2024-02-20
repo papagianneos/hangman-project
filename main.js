@@ -69,13 +69,14 @@
         wordContentBox.style.width = '50%';
         wordContentBox.style.margin = '5px';
         wordContentBox.style.borderRadius = '5px';
-        wordContentBox.style.backgroundColor = 'rgba(0, 0, 0, .5)';
+        wordContentBox.style.backgroundColor = 'rgba(0, 0, 0, .15)';
 
         let hangmanImageBox = document.createElement('div');
         hangmanImageBox.id = 'hangmanImageBox';
         hangmanImageBox.className = 'box';
         hangmanImageBox.style.width = '50%';
         hangmanImageBox.style.margin = '5px';
+        hangmanImageBox.style.borderRadius = '5px';
         hangmanImageBox.style.backgroundColor = 'black';
 
         document.getElementById('boxesHolder').style.display = 'flex'; // bug fix
