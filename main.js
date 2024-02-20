@@ -83,7 +83,31 @@
         document.getElementById('boxesHolder').appendChild(hangmanImageBox);
         // =======================================================================
 
-        // TO DO: Lives code
+        // =======================================================================
+        // Δες αν το πλήκτρο που πάτησε ο παίχτης είναι γράμμα της λέξης..
+        // =======================================================================
+        document.addEventListener('keydown', (e) => {
+            var keyNumber;
+            if (window.event) {                
+                keyNumber = e.keyCode;
+            } 
+            else if (e.which) keyNumber = e.which;
+
+            keyNumber = String.fromCharCode(keyNumber); // μετατροπή σε string
+
+            // Αν είναι ο χαρακτήρας στην λέξη
+            if (keyNumber in chosenWord) {
+                for (var letter of wordThing) {
+                    let index = chosenWord.indexOf(letter);
+                    wordThing.innerText = wordThing.innerText.replace(wordThing[index], letter);
+                }
+            }
+            else {
+                // TO DO: LIVES CODE
+            }
+        });
+        // =======================================================================
+
         let livesText = document.getElementById('livesText');
         livesText.innerText = `Lives: ${lives}`;
         livesText.classList.remove('hidden');
@@ -121,8 +145,10 @@
     startButton.appendChild(document.createTextNode('Play'));
     startButton.id = 'startButton';
     startButton.onclick = setup;
-    window.addEventListener('keydown', (e) => {
-        if (e.keyCode == 27) document.getElementById('startButton').click();
+    document.addEventListener('keydown', (e) => {
+        if (e.keyCode == 27 && !gameStarted) {
+            document.getElementById('startButton').click();
+        }
     });
 
     addToPage(wordInput);
