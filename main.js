@@ -47,11 +47,16 @@
     let wordInput = document.createElement('input');
     wordInput.type = 'text';
     wordInput.id = 'thingyUenterword';
-    wordInput.style.width = '100%';
     wordInput.placeholder = 'Εισάγετε μία λέξη εδώ..';
     wordInput.addEventListener('keypress', (e) => {
-        if (e.keyCode == 27) setup();
+        if (e.keyCode == 27) document.getElementById('startButton').click();
     });
+
+    // Play Button
+    let startButton = document.createElement('button');
+    startButton.appendChild(document.createTextNode('Play'));
+    startButton.id = 'startButton';
+    startButton.onclick = setup;
 
     addToPage(wordInput);
 })();
