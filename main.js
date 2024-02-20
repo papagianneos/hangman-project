@@ -124,6 +124,7 @@
             if (chosenWord.includes(character)) {
                 for (var strIndex = 0; strIndex < chosenWord.length; strIndex++) if (character == chosenWord[strIndex]) {
                     secretWord[strIndex] = character;
+                    secretWord[0] = secretWord[0].toUpperCase();
                     wordThing.innerText = ''; // reset
                     let word = '';
                     for (var letter of secretWord) word += letter;
