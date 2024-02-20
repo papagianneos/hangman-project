@@ -125,12 +125,13 @@
 
             // Αν είναι ο χαρακτήρας στην λέξη
             if (chosenWord.indexOf(character) in chosenWord.split('')) {
-                for (var letter of wordThing.split('')) {
+                for (var letter of wordThing.secretText.split('')) {
                     let index = chosenWord.split('').indexOf(letter);
                     wordThing.secretText = wordThing.secretText.replace(wordThing[index], letter);
                     for (var lt of wordThing.secretText) {
                         if ('0123456789'.split('').indexOf(lt) in '0123456789'.split('')) {
                             someVariableIdkHowToName = wordThing.secretText.replace(lt, '_');
+                            break;
                         }
                     }
                     wordThing.innerText = someVariableIdkHowToName;
