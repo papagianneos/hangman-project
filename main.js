@@ -1,4 +1,4 @@
-//(() => {
+(() => {
     let lives = 5, alreadyGivenCharacters = [], secretWord = [];
 
     const ALLOWED_CHARACTERS = 'ΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩαβγδεζηθικλμνξοπρστυφχψωabcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'.split('');
@@ -121,7 +121,7 @@
             if (alreadyGivenCharacters.includes(character) || !(ALLOWED_CHARACTERS.indexOf(character) in ALLOWED_CHARACTERS)) return;
 
             // Αν είναι ο χαρακτήρας στην λέξη
-            if (secretWord.indexOf(character) in chosenWord) {
+            if (chosenWord.indexOf(character) in chosenWord) {
                 const index = chosenWord.indexOf(character);
                 if (character == secretWord[index]) {
                     secretWord[index] = character;
@@ -184,4 +184,4 @@
     addToPage(wordInput);
     addToPage(startButton);
     document.getElementById('boxesHolder').appendChild(hintText);
-//})();
+})();
