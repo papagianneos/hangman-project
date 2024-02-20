@@ -49,7 +49,7 @@
         if (gameStarted) return;
 
         // Αφαίρεση των διπλών κενών.
-        chosenWord = removeRedundantSpaces(document.getElementById('wordInput').value);
+        chosenWord = removeRedundantSpaces(document.getElementById('wordInput').value.toLowerCase());
 
         // Δες για το μήκος ή απλά σκέτο κενό.
         if (chosenWord == '' || chosenWord == ' ' || chosenWord.length < 3) {
@@ -122,7 +122,7 @@
 
             // Αν είναι ο χαρακτήρας στην λέξη
             if (chosenWord.includes(character)) {
-                for (var strIndex = 0; strIndex < chosenWord.length; strIndex++) if (character == chosenWord[strIndex].toLowerCase()) {
+                for (var strIndex = 0; strIndex < chosenWord.length; strIndex++) if (character == chosenWord[strIndex]) {
                     secretWord[strIndex] = character;
                     secretWord[0] = secretWord[0].toUpperCase();
                     wordThing.innerText = ''; // reset
