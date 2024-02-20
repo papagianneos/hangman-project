@@ -128,12 +128,7 @@
                 for (var letter of wordThing.secretText.split('')) {
                     let index = chosenWord.split('').indexOf(letter);
                     wordThing.secretText = wordThing.secretText.replace(JSON.stringify(index), letter);
-                    for (var lt of wordThing.secretText) {
-                        if ('0123456789'.split('').indexOf(lt) in '0123456789'.split('')) {
-                            someVariableIdkHowToName = wordThing.secretText.replace(lt, '_');
-                            break;
-                        }
-                    }
+                    someVariableIdkHowToName = wordThing.secretText.replaceAll('1', '_');
                     wordThing.innerText = someVariableIdkHowToName;
                 }
             }
@@ -156,9 +151,10 @@
 
         // Εμφάνισε το πρώτο γράμμα.
         wordThing.innerText += chosenWord[0].toUpperCase();
+        wordThing.secretText += wordThing.innerText;
         for (var i = 0; i < (chosenWord.length - 1); i++) {
             wordThing.innerText += '_';
-            wordThing.secretText += JSON.stringify(i);
+            wordThing.secretText += '1';
         }
 
         removeFromPage(startButton);
