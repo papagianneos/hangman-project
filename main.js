@@ -1,4 +1,4 @@
-(() => {
+//(() => {
     let lives = 5, alreadyGivenCharacters = [], secretWord = [];
 
     const ALLOWED_CHARACTERS = 'ΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩαβγδεζηθικλμνξοπρστυφχψωabcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'.split('');
@@ -184,4 +184,4 @@
     addToPage(wordInput);
     addToPage(startButton);
     document.getElementById('boxesHolder').appendChild(hintText);
-})();
+//})();
