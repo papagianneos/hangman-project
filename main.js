@@ -70,7 +70,7 @@
         let hangmanImageBox = document.createElement('div');
         hangmanImageBox.id = 'hangmanImageBox';
         hangmanImageBox.className = 'box';
-        hangmanImageBox.width = '50%';
+        hangmanImageBox.style.width = '50%';
         hangmanImageBox.style.margin = '5px';
         hangmanImageBox.style.backgroundColor = 'black';
         mainScreen.appendChild(hangmanImageBox);
