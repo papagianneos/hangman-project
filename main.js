@@ -1,5 +1,5 @@
 (() => {
-    let lives = 5;
+    let lives = 5, lastGivenCharacter;
 
     const music = {
         menu: new Howl({
@@ -97,15 +97,18 @@
         document.addEventListener('keydown', (e) => {
             if (!gameStarted) return;
             var keyNumber;
-            if (window.event) {                
+            if (window.event) {
                 keyNumber = e.keyCode;
-            } 
+            }
             else if (e.which) keyNumber = e.which;
 
             var character = String.fromCharCode(keyNumber); // μετατροπή σε string
 
+            // Αν είναι ο ίδιος χαρακτήρας με πριν μην κάνεις τίποτα.
+            if (character == lastGivenCharacter) return;
+
             // Αν είναι ο χαρακτήρας στην λέξη
-            if (character in chosenWord.split()) {
+            if (character in chosenWord.split('')) {
                 for (var letter of wordThing) {
                     let index = chosenWord.indexOf(letter);
                     wordThing.innerText = wordThing.innerText.replace(wordThing[index], letter);
@@ -115,6 +118,8 @@
                 // TO DO: LIVES CODE
                 document.getElementById('notInWordThing').innerText += `${character}, `
             }
+
+            lastGivenCharacter = character;
         });
         // =======================================================================
 
