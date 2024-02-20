@@ -182,8 +182,8 @@
     startButton.appendChild(document.createTextNode('Play'));
     startButton.id = 'startButton';
     startButton.onclick = setup;
-    document.addEventListener('keydown', (e) => {
-        if (e.keyCode == 27 && !gameStarted) {
+    wordInput.addEventListener('keydown', (e) => {
+        if (e.keyCode == 13 && !gameStarted) {
             document.getElementById('startButton').click();
         }
     });
