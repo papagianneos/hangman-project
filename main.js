@@ -1,4 +1,5 @@
 (() => {
+    let lives = 5;
 
     let music = {
         menu: new Howl({
@@ -53,9 +54,14 @@
                 return;
         }
 
+        // TO DO: Lives code
+        let livesText = document.createElement('span');
+        livesText.innerText = `Lives: ${lives}`;
+
         // Δημιούργησε το μενού με τα κενά
         let wordThing = document.createElement('h2');
         wordThing.style.letterSpacing = '4px';
+        wordThing.style.fontSize = '45px';
         wordThing.style.pointerEvents = 'none';
 
         for (var i = 0; i < chosenWord.length; i++) {
@@ -65,6 +71,7 @@
         removeFromPage(startButton);
         removeFromPage(wordInput);
         document.getElementById('mainScreen').removeChild(hintText);
+        addToPage(livesText);
         addToPage(wordThing);
         gameStarted = true;
         music.menu.pause();
