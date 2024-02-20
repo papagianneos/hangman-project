@@ -68,7 +68,7 @@
         wordContentBox.style.transition = '1s';
         wordContentBox.style.width = '50%';
         wordContentBox.style.margin = '5px';
-        wordContentBox.style.borderRadius = '5%';
+        wordContentBox.style.borderRadius = '5px';
         wordContentBox.style.backgroundColor = 'rgba(0, 0, 0, .5)';
 
         let hangmanImageBox = document.createElement('div');
