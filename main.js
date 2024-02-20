@@ -1,5 +1,5 @@
 (() => {
-    let lives = 5;
+    let lives = 5, alreadyGivenCharacters = [], secretWord;
 
     const ALLOWED_CHARACTERS = 'ΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩαβγδεζηθικλμνξοπρστυφχψωabcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'.split('');
 
@@ -65,6 +65,7 @@
             }
         }
 
+        chosenWord = chosenWord.split('');
         // ----------------------------------------------------------------------------------
 
         // =======================================================================
@@ -116,37 +117,26 @@
 
             var character = String.fromCharCode(keyNumber).toLowerCase(); // μετατροπή σε string
 
-            const alreadyGivenCharacters = document.getElementById('notInWordThing').innerText.replace(',', '').split('');
-
             // Αν είναι ο ίδιος χαρακτήρας με πριν μην κάνεις τίποτα.
-            if (alreadyGivenCharacters.indexOf(character) in alreadyGivenCharacters || !(ALLOWED_CHARACTERS.indexOf(character) in ALLOWED_CHARACTERS)) return;
+            if (alreadyGivenCharacters.includes(character) || !(ALLOWED_CHARACTERS.indexOf(character) in ALLOWED_CHARACTERS)) return;
 
             // Αν είναι ο χαρακτήρας στην λέξη
-            if (chosenWord.indexOf(character) in chosenWord.split('')) {
-                for (var letter of chosenWord.split('')) {
-                    if (letter == character) {
-                        wordThing.secretText = wordThing.secretText.replace(JSON.stringify(chosenWord.split('').indexOf(character)), letter);
-                        // -----------------------------------------------------
-                        // number remover
-                        // -----------------------------------------------------
-                        let decoded = '';
-                        for (var letter of wordThing.secretText.split('')) {
-                            for (var i = 0; i < 10; i++) {
-                                if (letter.includes(JSON.stringify(i))) {
-                                    letter = letter.replace(letter, '_');
-                                }
-                            }
-                            decoded += letter;
-                        }
-                        wordThing.innerText = decoded;
-                        // -----------------------------------------------------
+            if (secretWord.indexOf(character) in chosenWord) {
+                const index = chosenWord.indexOf(character);
+                if (character == secretWord[index]) {
+                    secretWord[index] = character;
+                    wordThing.innerText = ''; // reset
+                    for (var letter of secretWord) {
+                        wordThing.innerText += letter;
                     }
                 }
             }
             else {
                 // TO DO: LIVES CODE
-                document.getElementById('notInWordThing').innerText += ` ${character} `
+                document.getElementById('notInWordThing').innerText += ` ${character} `;
             }
+
+            alreadyGivenCharacters.push(character);
         });
         // =======================================================================
 
@@ -162,14 +152,7 @@
 
         // Εμφάνισε το πρώτο γράμμα.
         wordThing.innerText += chosenWord[0].toUpperCase();
-        wordThing.secretText = wordThing.innerText;
-        for (var i = 0; i < (chosenWord.length - 1); i++) {
-            wordThing.innerText += '_';
-        }
-
-        for (var k = 1; k < chosenWord.length; k++) {
-            wordThing.secretText += JSON.stringify(k);
-        }
+        for (var i = 0; i < (chosenWord.length - 1); i++) secretWord.push('_');
 
         removeFromPage(startButton);
         removeFromPage(wordInput);
