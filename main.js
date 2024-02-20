@@ -121,11 +121,19 @@
             // Αν είναι ο ίδιος χαρακτήρας με πριν μην κάνεις τίποτα.
             if (alreadyGivenCharacters.indexOf(character) in alreadyGivenCharacters || !(ALLOWED_CHARACTERS.indexOf(character) in ALLOWED_CHARACTERS)) return;
 
+            let someVariableIdkHowToName;
+
             // Αν είναι ο χαρακτήρας στην λέξη
             if (chosenWord.indexOf(character) in chosenWord.split('')) {
                 for (var letter of wordThing) {
                     let index = chosenWord.split('').indexOf(letter);
-                    wordThing.innerText = wordThing.innerText.replace(wordThing[index], letter);
+                    wordThing.secretText = wordThing.secretText.replace(wordThing[index], letter);
+                    for (var lt of wordThing.secretText) {
+                        if ('0123456789'.split('').indexOf(lt) in '0123456789'.split('')) {
+                            someVariableIdkHowToName = wordThing.secretText.replace(lt, '_');
+                        }
+                    }
+                    wordThing.innerText = someVariableIdkHowToName;
                 }
             }
             else {
@@ -149,6 +157,7 @@
         wordThing.innerText += chosenWord[0].toUpperCase();
         for (var i = 0; i < (chosenWord.length - 1); i++) {
             wordThing.innerText += '_';
+            wordThing.secretText += JSON.stringify(i);
         }
 
         removeFromPage(startButton);
