@@ -44,7 +44,7 @@
         switch (true) {
             case chosenWord == '' || chosenWord == ' ':
                 alert('Ρε φίλε πρέπει να δώσεις και μία κανονική λέξη..');
-                break;
+                return;
         }
 
         // Δημιούργησε το μενού με τα κενά
