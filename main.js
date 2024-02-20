@@ -55,9 +55,23 @@
 
         // ----------------------------------------------------------------------------------
 
+        // =======================================================================
+        // ANIMATION
+        // =======================================================================
         let mainScreen = document.getElementById('mainScreen');
         mainScreen.style.transition = '1s';
         mainScreen.style.width = '100%';
+
+        let wordContentBox = document.getElementById('periexomeno');
+        wordContentBox.style.transition = '1s';
+        wordContentBox.style.width = '50%';
+
+        let hangmanImageBox = document.createElement('div');
+        hangmanImageBox.id = 'hangmanImageBox';
+        hangmanImageBox.className = 'box';
+        hangmanImageBox.width = '50%';
+        mainScreen.appendChild(wordContentBox);
+        // =======================================================================
 
         // TO DO: Lives code
         let livesText = document.getElementById('livesText');
