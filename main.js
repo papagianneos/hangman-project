@@ -1,4 +1,4 @@
-window.onload = () => {
+(() => {
   const space = '_';
   
   let chosenWord = prompt('Πληκτρολογίστε μία λέξη για την κρεμάλα: ');
@@ -7,7 +7,8 @@ window.onload = () => {
 
   for (var i = 0; i < chosenWord.length; i++) {
     wordThing.innerText += space;
+    alert('done');
   }
 
   documnent.getElementById('periexomeno').appendChild(wordThing);
-}
+})();
