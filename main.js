@@ -104,7 +104,7 @@
             var character = String.fromCharCode(keyNumber); // μετατροπή σε string
 
             // Αν είναι ο χαρακτήρας στην λέξη
-            if (character in chosenWord) {
+            if (character in chosenWord.split()) {
                 for (var letter of wordThing) {
                     let index = chosenWord.indexOf(letter);
                     wordThing.innerText = wordThing.innerText.replace(wordThing[index], letter);
