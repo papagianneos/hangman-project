@@ -154,6 +154,12 @@
         for (var i = 0; i < chosenWord.length; i++) secretWord.push('_');
         secretWord[0] = chosenWord[0].toUpperCase();
         let word = '';
+        // Remove spaces
+        for (var index2 = 0; index2 < chosenWord.length; index2++) {
+            if (chosenWord[index2] == ' ') {
+                secretWord[index2] = ' ';
+            }
+        }
         for (var letter of secretWord) word += letter;
         wordThing.innerText = word;
 
