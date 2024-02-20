@@ -37,7 +37,6 @@
 
     const setup = () => {
         if (gameStarted) return;
-        music.menu.pause();
 
         // Δες αν ο χρήστης έδωσε λέξη
         chosenWord = removeRedundantSpaces(document.getElementById('wordInput').value);
@@ -58,6 +57,7 @@
 
         addToPage(wordThing);
         gameStarted = true;
+        music.menu.pause();
         music.level.play();
     }
 
