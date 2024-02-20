@@ -41,7 +41,7 @@
     };
 
     let hintText = document.createElement('span');
-    hintText.appendChild(document.createTextNode('Πατήστε το κουμπί «Play» ή πατήστε το πλήκτρο «Enter» για να αρχίσετε το παιχνίδι.'))
+    hintText.appendChild(document.createTextNode('Πατήστε το κουμπί «Play» ή πατήστε το πλήκτρο «Enter» για να αρχίσετε το παιχνίδι.'));
 
     const setup = () => {
         if (gameStarted) return;
@@ -55,8 +55,6 @@
         }
 
         // TO DO: Lives code
-        let livesText = document.createElement('span');
-        livesText.innerText = `Lives: ${lives}`;
 
         // Δημιούργησε το μενού με τα κενά
         let wordThing = document.createElement('h2');
@@ -73,7 +71,6 @@
         removeFromPage(startButton);
         removeFromPage(wordInput);
         document.getElementById('mainScreen').removeChild(hintText);
-        addToPage(livesText);
         addToPage(wordThing);
         gameStarted = true;
         music.menu.pause();
