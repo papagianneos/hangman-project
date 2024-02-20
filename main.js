@@ -48,10 +48,9 @@
 
         // Δες αν ο χρήστης έδωσε λέξη
         chosenWord = removeRedundantSpaces(document.getElementById('wordInput').value);
-        switch (true) {
-            case chosenWord == '' || chosenWord == ' ':
-                alert('Ρε φίλε πρέπει να δώσεις και μία κανονική λέξη..');
-                return;
+        if (chosenWord == '' || chosenWord == ' ' || chosenWord.length < 3) {
+            alert('Ρε φίλε πρέπει να δώσεις μία κανονική λέξη..');
+            return;
         }
 
         // TO DO: Lives code
