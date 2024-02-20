@@ -165,7 +165,10 @@
         wordThing.secretText = wordThing.innerText;
         for (var i = 0; i < (chosenWord.length - 1); i++) {
             wordThing.innerText += '_';
-            wordThing.secretText += JSON.stringify(i);
+        }
+
+        for (var k = 1; k < (chosenWord.length - 1); k++) {
+            wordThing.secretText += JSON.stringify(k);
         }
 
         removeFromPage(startButton);
