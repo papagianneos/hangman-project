@@ -53,6 +53,12 @@
             return;
         }
 
+        // ----------------------------------------------------------------------------------
+
+        let mainScreen = document.getElementById('mainScreen');
+        mainScreen.style.transition = '1s';
+        mainScreen.style.width = '100%';
+
         // TO DO: Lives code
         let livesText = document.getElementById('livesText');
         livesText.innerText = `Lives: ${lives}`;
