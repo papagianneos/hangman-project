@@ -122,7 +122,7 @@
 
             // Αν είναι ο χαρακτήρας στην λέξη
             if (chosenWord.includes(character)) {
-                for (var strIndex = 0; strIndex < chosenWord.length; strIndex++) if (character == chosenWord[strIndex]) {
+                for (var strIndex = 0; strIndex < chosenWord.length; strIndex++) if (character == chosenWord[strIndex].toLowerCase()) {
                     secretWord[strIndex] = character;
                     secretWord[0] = secretWord[0].toUpperCase();
                     wordThing.innerText = ''; // reset
