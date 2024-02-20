@@ -114,7 +114,7 @@
             }
             else if (e.which) keyNumber = e.which;
 
-            var character = String.fromCharCode(keyNumber); // μετατροπή σε string
+            var character = String.fromCharCode(keyNumber).toLowerCase(); // μετατροπή σε string
 
             const alreadyGivenCharacters = document.getElementById('notInWordThing').innerText.replace(',', '').split('');
 
