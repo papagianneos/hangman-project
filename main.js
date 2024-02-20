@@ -116,7 +116,7 @@
 
             var character = String.fromCharCode(keyNumber); // μετατροπή σε string
 
-            const alreadyGivenCharacters = document.getElementById('notInWordThing').replace(',', '').split('');
+            const alreadyGivenCharacters = document.getElementById('notInWordThing').innerText.replace(',', '').split('');
 
             // Αν είναι ο ίδιος χαρακτήρας με πριν μην κάνεις τίποτα.
             if (alreadyGivenCharacters.indexOf(character) in alreadyGivenCharacters || !(ALLOWED_CHARACTERS.indexOf(character) in ALLOWED_CHARACTERS)) return;
