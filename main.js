@@ -123,7 +123,7 @@
             // Αν είναι ο χαρακτήρας στην λέξη
             if (chosenWord.includes(character)) {
                 const index = chosenWord.indexOf(character);
-                if (character == chosenWord[index]) {
+                for (var i = 0; i < secretWord.length; i++) if (character == chosenWord[index]) {
                     secretWord[index] = character;
                     wordThing.innerText = ''; // reset
                     let word = '';
