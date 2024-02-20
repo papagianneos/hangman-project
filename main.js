@@ -1,5 +1,5 @@
 (() => {
-    let lives = 5, alreadyGivenCharacters = [], secretWord;
+    let lives = 5, alreadyGivenCharacters = [], secretWord = [];
 
     const ALLOWED_CHARACTERS = 'ΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩαβγδεζηθικλμνξοπρστυφχψωabcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'.split('');
 
