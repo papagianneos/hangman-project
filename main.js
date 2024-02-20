@@ -49,7 +49,7 @@
         if (gameStarted) return;
 
         // Αφαίρεση των διπλών κενών.
-        chosenWord = removeRedundantSpaces(document.getElementById('wordInput').value);
+        chosenWord = removeRedundantSpaces(document.getElementById('wordInput').value.toLowerCase());
 
         // Δες για το μήκος ή απλά σκέτο κενό.
         if (chosenWord == '' || chosenWord == ' ' || chosenWord.length < 3) {
@@ -127,7 +127,7 @@
             if (chosenWord.indexOf(character) in chosenWord.split('')) {
                 for (var letter of wordThing.secretText.split('')) {
                     let index = chosenWord.split('').indexOf(letter);
-                    wordThing.secretText = wordThing.secretText.replace(wordThing[index], letter);
+                    wordThing.secretText = wordThing.secretText.replace(JSON.stringify(index), letter);
                     for (var lt of wordThing.secretText) {
                         if ('0123456789'.split('').indexOf(lt) in '0123456789'.split('')) {
                             someVariableIdkHowToName = wordThing.secretText.replace(lt, '_');
