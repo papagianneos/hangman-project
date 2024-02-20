@@ -1,7 +1,7 @@
 body {
     color: green;
     background: black;
-    font: bold 5vh Montserrat, sans-serif;
+    font: bold 20px Montserrat, sans-serif;
 }
 
 #mainScreen {
@@ -48,4 +48,5 @@ body {
 
 #wordInput {
     width: 50%;
+    text-align: center;
 }
