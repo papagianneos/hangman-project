@@ -1,7 +1,7 @@
 body {
     color: green;
     background: black;
-    font: bold 5vh Montserrat, sans-serif;
+    font: bold 18px Montserrat, sans-serif;
     user-select: none;
 }
 
@@ -34,6 +34,9 @@ body {
     background-color: darkblue;
     align-items: center;
     text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 
