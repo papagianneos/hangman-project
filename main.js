@@ -1,7 +1,7 @@
 (() => {
     let lives = 5;
 
-    let music = {
+    const music = {
         menu: new Howl({
             src: ['/hangman_menu.mp3'],
             loop: true
