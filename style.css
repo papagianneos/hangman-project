@@ -40,6 +40,12 @@ body {
     margin-top: 25px;
 }
 
+
 #startButton {
-  width:
+    width: 50%;
+    cursor: pointer;
+}
+
+#wordInput {
+    width: 50%;
 }
