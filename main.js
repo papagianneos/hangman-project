@@ -1,6 +1,19 @@
 (() => {
+
+    let music = {
+        menu: new Howl({
+            src: ['/hangman_menu.mp3'],
+            loop: true
+        }),
+        level: new Howl({
+            src: ['/hangman_theme.mp3'],
+            loop: true
+        })
+    }
+
     // Global μεταβλητές
     let gameStarted = false;
+    music.menu.play();
 
     const addToPage = (element) => {
         document.getElementById('periexomeno').appendChild(element);
@@ -24,6 +37,7 @@
 
     const setup = () => {
         if (gameStarted) return;
+        music.menu.pause();
 
         // Δες αν ο χρήστης έδωσε λέξη
         chosenWord = removeRedundantSpaces(document.getElementById('wordInput').value);
@@ -44,6 +58,7 @@
 
         addToPage(wordThing);
         gameStarted = true;
+        music.level.play();
     }
 
     // Πλαίσιο για να εισάγεται η λέξη στην αρχή.
