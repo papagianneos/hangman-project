@@ -1,6 +1,8 @@
 (() => {
     let lives = 5, lastGivenCharacter;
 
+    const ALLOWED_CHARACTERS = 'ΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩαβγδεζηθικλμνξοπρστυφχψωabcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'.split('');
+
     const music = {
         menu: new Howl({
             src: ['/hangman_menu.mp3'],
@@ -46,11 +48,21 @@
     const setup = () => {
         if (gameStarted) return;
 
-        // Δες αν ο χρήστης έδωσε λέξη
+        // Αφαίρεση των διπλών κενών.
         chosenWord = removeRedundantSpaces(document.getElementById('wordInput').value);
+
+        // Δες για το μήκος ή απλά σκέτο κενό.
         if (chosenWord == '' || chosenWord == ' ' || chosenWord.length < 3) {
             alert('Ρε φίλε πρέπει να δώσεις μία κανονική λέξη..');
             return;
+        }
+
+        // Δες αν η λέξη περιέχει χαρακτήρα που δεν επιτρέπεται.
+        for (var character_ of ALLOWED_CHARACTERS) {
+            if (!(character_ in ALLOWED_CHARACTERS)) {
+                alert('Η λέξη πρέπει μόνο να περιέχει γράμματα ή αριθμούς.');
+                break;
+            }
         }
 
         // ----------------------------------------------------------------------------------
@@ -105,7 +117,7 @@
             var character = String.fromCharCode(keyNumber); // μετατροπή σε string
 
             // Αν είναι ο ίδιος χαρακτήρας με πριν μην κάνεις τίποτα.
-            if (character == lastGivenCharacter) return;
+            if (character == lastGivenCharacter || !(character in ALLOWED_CHARACTERS)) return;
 
             // Αν είναι ο χαρακτήρας στην λέξη
             if (character in chosenWord.split('')) {
