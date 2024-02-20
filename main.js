@@ -121,20 +121,18 @@
             // Αν είναι ο ίδιος χαρακτήρας με πριν μην κάνεις τίποτα.
             if (alreadyGivenCharacters.indexOf(character) in alreadyGivenCharacters || !(ALLOWED_CHARACTERS.indexOf(character) in ALLOWED_CHARACTERS)) return;
 
-            let someVariableIdkHowToName;
-
             // Αν είναι ο χαρακτήρας στην λέξη
             if (chosenWord.indexOf(character) in chosenWord.split('')) {
+                let decoded = '';
                 for (var letter of wordThing.secretText.split('')) {
-                    let index = chosenWord.split('').indexOf(letter);
-                    wordThing.secretText = wordThing.secretText.replace(JSON.stringify(index), letter);
-                    for (var j of wordThing.secretText.split('')) {
-                        if ('0123456789'.split('').includes(j)) {
-                            someVariableIdkHowToName = wordThing.secretText.replace(j, '_');
+                    for (var i = 0; i < 10; i++) {
+                        if (letter.includes(JSON.stringify(i))) {
+                            letter = letter.replace(letter, '_');
                         }
                     }
-                    wordThing.innerText = someVariableIdkHowToName;
+                    decoded += letter;
                 }
+                wordThing.innerText = decoded;
             }
             else {
                 // TO DO: LIVES CODE
