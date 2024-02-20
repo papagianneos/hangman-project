@@ -58,7 +58,7 @@
         }
 
         // Δες αν η λέξη περιέχει χαρακτήρα που δεν επιτρέπεται.
-        for (var character_ of ALLOWED_CHARACTERS) {
+        for (var character_ of chosenWord.split('')) {
             if (!(character_ in ALLOWED_CHARACTERS)) {
                 alert('Η λέξη πρέπει μόνο να περιέχει γράμματα ή αριθμούς.');
                 return;
