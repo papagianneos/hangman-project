@@ -95,7 +95,7 @@
 
         removeFromPage(startButton);
         removeFromPage(wordInput);
-        document.getElementById('mainScreen').removeChild(hintText);
+        document.getElementById('boxesHolder').removeChild(hintText);
         addToPage(wordThing);
         gameStarted = true;
         music.menu.pause();
@@ -120,5 +120,5 @@
 
     addToPage(wordInput);
     addToPage(startButton);
-    document.getElementById('mainScreen').appendChild(hintText);
+    document.getElementById('boxesHolder').appendChild(hintText);
 })();
