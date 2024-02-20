@@ -1,5 +1,5 @@
 body {
-    color: green;
+    color: black;
     background: black;
     font: bold 18px Montserrat, sans-serif;
     user-select: none;
@@ -16,6 +16,10 @@ body {
     align-items: center;
     text-align: center;
     border-radius: 5%;
+}
+
+.hidden {
+    display: none;
 }
 
 .text {
