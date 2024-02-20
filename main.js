@@ -1,4 +1,4 @@
-(() => {
+//(() => {
     let lives = 5, alreadyGivenCharacters = [], secretWord = [];
 
     const ALLOWED_CHARACTERS = 'ΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩαβγδεζηθικλμνξοπρστυφχψωabcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'.split('');
@@ -151,8 +151,8 @@
         wordThing.style.pointerEvents = 'none';
 
         // Εμφάνισε το πρώτο γράμμα.
-        wordThing.innerText += chosenWord[0].toUpperCase();
-        for (var i = 0; i < (chosenWord.length - 1); i++) secretWord.push('_');
+        secretWord[0] = chosenWord[0].toLowerCase();
+        for (var i = 0; i < chosenWord.length; i++) secretWord.push('_');
 
         removeFromPage(startButton);
         removeFromPage(wordInput);
@@ -184,4 +184,4 @@
     addToPage(wordInput);
     addToPage(startButton);
     document.getElementById('boxesHolder').appendChild(hintText);
-})();
+//})();
