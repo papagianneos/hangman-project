@@ -111,7 +111,7 @@
     startButton.appendChild(document.createTextNode('Play'));
     startButton.id = 'startButton';
     startButton.onclick = setup;
-    startButton.addEventListener('keydown', (e) => {
+    window.addEventListener('keydown', (e) => {
         if (e.keyCode == 27) document.getElementById('startButton').click();
     });
 
