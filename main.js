@@ -65,7 +65,7 @@
             }
         }
 
-        chosenWord = chosenWord.split('');
+        chosenWord = chosenWord.split(''); // μετατροπή σε πίνακα/λίστα από string
         // ----------------------------------------------------------------------------------
 
         // =======================================================================
@@ -151,7 +151,7 @@
 
         // Εμφάνισε το πρώτο γράμμα.
         for (var i = 0; i < chosenWord.length; i++) secretWord.push('_');
-        secretWord[0] = chosenWord[0].toLowerCase();
+        secretWord[0] = chosenWord[0].toUpperCase();
         let word = '';
         for (var letter of secretWord) word += letter;
         wordThing.innerText = word;
