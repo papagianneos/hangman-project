@@ -64,7 +64,9 @@
         wordThing.style.fontSize = '45px';
         wordThing.style.pointerEvents = 'none';
 
-        for (var i = 0; i < chosenWord.length; i++) {
+        // Εμφάνισε το πρώτο γράμμα.
+        wordThing.innerText += chosenWord[0].toUpperCase();
+        for (var i = 0; i < (chosenWord.length - 1); i++) {
             wordThing.innerText += '_';
         }
 
