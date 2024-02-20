@@ -64,7 +64,7 @@
 
         removeFromPage(startButton);
         removeFromPage(wordInput);
-        removeFromPage(hintText);
+        document.body.removeChild(hintText);
         addToPage(wordThing);
         gameStarted = true;
         music.menu.pause();
@@ -90,5 +90,5 @@
 
     addToPage(wordInput);
     addToPage(startButton);
-    addToPage(hintText);
+    document.body.appendChild(hintText);
 })();
