@@ -73,6 +73,7 @@
         hangmanImageBox.style.width = '50%';
         hangmanImageBox.style.margin = '5px';
         hangmanImageBox.style.backgroundColor = 'black';
+        document.getElementById('boxesHolder').style.display = 'flex'; // bug fix
         document.getElementById('boxesHolder').appendChild(hangmanImageBox);
         // =======================================================================
 
