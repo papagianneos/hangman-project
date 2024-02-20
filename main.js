@@ -1,4 +1,6 @@
 (() => {
+    // Global μεταβλητές
+    let gameStarted = false;
 
     const addToPage = (element) => {
         document.getElementById('periexomeno').appendChild(element);
@@ -21,6 +23,8 @@
     };
 
     const setup = () => {
+        if (gameStarted) return;
+
         // Δες αν ο χρήστης έδωσε λέξη
         chosenWord = removeRedundantSpaces(document.getElementById('wordInput').value);
         switch (true) {
@@ -39,6 +43,7 @@
         }
 
         addToPage(wordThing);
+        gameStarted = true;
     }
 
     // Πλαίσιο για να εισάγεται η λέξη στην αρχή.
