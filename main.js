@@ -125,7 +125,7 @@
 
             // Αν είναι ο χαρακτήρας στην λέξη
             if (chosenWord.indexOf(character) in chosenWord.split('')) {
-                for (var letter of wordThing) {
+                for (var letter of wordThing.split('')) {
                     let index = chosenWord.split('').indexOf(letter);
                     wordThing.secretText = wordThing.secretText.replace(wordThing[index], letter);
                     for (var lt of wordThing.secretText) {
