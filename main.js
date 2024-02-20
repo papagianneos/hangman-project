@@ -122,9 +122,8 @@
 
             // Αν είναι ο χαρακτήρας στην λέξη
             if (chosenWord.includes(character)) {
-                const index = chosenWord.indexOf(character);
-                for (var i = 0; i < secretWord.length; i++) if (character == chosenWord[index]) {
-                    secretWord[index] = character;
+                for (var strIndex = 0; strIndex < chosenWord.length; strIndex++) if (character == chosenWord[strIndex]) {
+                    secretWord[strIndex] = character;
                     wordThing.innerText = ''; // reset
                     let word = '';
                     for (var letter of secretWord) word += letter;
@@ -151,8 +150,8 @@
         wordThing.style.pointerEvents = 'none';
 
         // Εμφάνισε το πρώτο γράμμα.
-        secretWord[0] = chosenWord[0].toLowerCase();
         for (var i = 0; i < chosenWord.length; i++) secretWord.push('_');
+        secretWord[0] = chosenWord[0].toLowerCase();
         let word = '';
         for (var letter of secretWord) word += letter;
         wordThing.innerText = word;
