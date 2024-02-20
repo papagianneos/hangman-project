@@ -1,7 +1,7 @@
 (() => {
     let lives = 5, alreadyGivenCharacters = [], secretWord = [];
 
-    const ALLOWED_CHARACTERS = 'ΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩαβγδεζηθικλμνξοπρστυφχψωabcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'.split('');
+    const ALLOWED_CHARACTERS = ' ΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩαβγδεζηθικλμνξοπρστυφχψωabcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'.split('');
 
     const music = {
         menu: new Howl({
@@ -132,7 +132,7 @@
                 }
             }
             else {
-                // TO DO: LIVES CODE
+                // TO DO: LIVES CODE AND BETTER THING V
                 document.getElementById('notInWordThing').innerText += ` ${character} `;
             }
 
