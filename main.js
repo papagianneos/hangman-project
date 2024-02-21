@@ -136,7 +136,28 @@
                 }
             }
             else {
-                // TO DO: LIVES CODE AND BETTER THING V
+                lives -= 1;
+                let source;
+                switch (lives) {
+                    case 5:
+                        source = 'hangman1';
+                        break;
+                    case 4:
+                        source = 'hangman2';
+                        break;
+                    case 3:
+                        source = 'hangman3';
+                        break;
+                    case 2:
+                        source = 'hangman4';
+                        break;
+                    case 1:
+                        source = 'hangman5';
+                        break;
+                    default:
+                        source = 'hangman6';
+                }
+                hangmanImage.src = `/hangman frames/${source}.png`;
                 document.getElementById('notInWordThing').innerText += ` ${character.toUpperCase()} `;
             }
 
