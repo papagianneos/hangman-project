@@ -16,6 +16,7 @@ body {
     top: 50%;
     align-items: center;
     text-align: center;
+    transition: 1s;
     border-radius: 5%;
 }
 
