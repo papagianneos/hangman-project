@@ -151,6 +151,7 @@
         let hangmanImage = document.createElement('img');
         hangmanImage.src = '/hangman frames/hangman0.png';
         hangmanImageBox.appendChild(hangmanImage);
+        hangmanImage.id = 'hangman';
 
         let lettersThatNotInWordText = document.createElement('span');
         lettersThatNotInWordText.style.position = 'absolute';
@@ -214,7 +215,7 @@
                     default:
                         source = 'hangman6';
                 }
-                hangmanImage.src = `/hangman frames/${source}.png`;
+                document.getElementById('hangman').src = `/hangman frames/${source}.png`;
                 document.getElementById('livesText').innerText = `Lives: ${lives}`;
                 document.getElementById('notInWordThing').innerText += ` ${character.toUpperCase()} `;
             }
