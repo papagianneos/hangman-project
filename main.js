@@ -81,6 +81,10 @@
     });
 
     const resetMenu = () => {
+        secretWord = [];
+        alreadyGivenCharacters = [];
+        lives = 6;
+        document.getElementById('wordThing').innerText = '';
         document.getElementById('livesText').className = 'hidden';
         let periexomenoSaved = document.getElementById('boxesHolder').children[1],
             boxesHolderSaved = document.getElementById('boxesHolder'),
@@ -154,7 +158,6 @@
         lettersThatNotInWordText.id = 'notInWordThing';
         lettersThatNotInWordText.style.color = 'red';
 
-        document.getElementById('boxesHolder').style.display = 'flex'; // bug fix
         document.getElementById('boxesHolder').appendChild(hangmanImageBox);
 
         mainScreen.appendChild(lettersThatNotInWordText);
@@ -227,6 +230,7 @@
         wordThing.style.letterSpacing = '4px';
         wordThing.style.fontSize = '45px';
         wordThing.style.pointerEvents = 'none';
+        wordThing.id = 'wordThing';
 
         // Εμφάνισε το πρώτο γράμμα.
         for (var i = 0; i < chosenWord.length; i++) secretWord.push('_');
