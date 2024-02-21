@@ -105,7 +105,7 @@
         music.level.pause();
         document.getElementById('mainScreen').style.display = 'flex';
         document.getElementById('mainScreen').style.justifyContent = 'center';
-        document.getElementById('mainScreen').style.backgroundColor = 'rgba(0, 0, 0, .15)';
+        document.getElementById('mainScreen').style.backgroundColor = 'rgba(255, 255, 255, 0.8)';
 
         let holder = document.createElement('div');
 
