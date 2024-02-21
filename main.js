@@ -92,6 +92,7 @@
 
         document.getElementById('mainScreen').removeAttribute('style');
         document.getElementById('boxesHolder').replaceChildren(...[periexomenoSaved, hintText]);
+        document.getElementById('boxesHolder').style.display = 'flex'; // bug fix
         document.getElementById('mainScreen').replaceChildren(...[hangmanLogoSaved, livesText, boxesHolderSaved]);
         document.getElementById('periexomeno').removeAttribute('style');
         document.getElementById('periexomeno').replaceChildren(...[wordInput, startButton]);
@@ -185,10 +186,10 @@
                 for (var strIndex = 0; strIndex < chosenWord.length; strIndex++) if (character == chosenWord[strIndex]) {
                     secretWord[strIndex] = character;
                     secretWord[0] = secretWord[0].toUpperCase();
-                    wordThing.innerText = ''; // reset
+                    document.getElementById('wordThing').innerText = ''; // reset
                     let word = '';
                     for (var letter of secretWord) word += letter;
-                    wordThing.innerText = word;
+                    document.getElementById('wordThing').innerText = word;
                 }
             }
             else {
@@ -244,7 +245,7 @@
             }
         }
         for (var letter of secretWord) word += letter;
-        wordThing.innerText = word;
+        document.getElementById('wordThing').innerText = word;
 
         removeFromPage(startButton);
         removeFromPage(wordInput);
