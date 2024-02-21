@@ -36,7 +36,6 @@ body {
 
 #boxesHolder {
     height: 100%;
-    display: flex;
 }
 
 #hangmanImageBox img {
