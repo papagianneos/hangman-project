@@ -92,7 +92,7 @@
 
         document.getElementById('mainScreen').removeAttribute('style');
         document.getElementById('boxesHolder').replaceChildren(...[periexomenoSaved, hintText]);
-        document.getElementById('boxesHolder').style.display = 'flex'; // bug fix
+        document.getElementById('boxesHolder').style.display = ''; // bug fix
         document.getElementById('mainScreen').replaceChildren(...[hangmanLogoSaved, livesText, boxesHolderSaved]);
         document.getElementById('periexomeno').removeAttribute('style');
         document.getElementById('periexomeno').replaceChildren(...[wordInput, startButton]);
