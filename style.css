@@ -20,6 +20,10 @@ body {
     border-radius: 5%;
 }
 
+#notInWordThing {
+    transform: translateX(-50%);
+}
+
 .hidden {
     display: none;
 }
