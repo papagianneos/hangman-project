@@ -1,5 +1,5 @@
 (() => {
-    let lives = 6, alreadyGivenCharacters = [], secretWord = [];
+    let lives = 6, alreadyGivenCharacters = [], secretWord = [], periexomenoSaved, boxesHolderSaved, hangmanLogoSaved;
 
     const ALLOWED_CHARACTERS = ' ΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩαβγδεζηθικλμνξοπρστυφχψωabcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'.split('');
 
@@ -81,19 +81,16 @@
     });
 
     const resetMenu = () => {
+        document.getElementById('mainScreen').removeAttribute('style');
+        document.getElementById('mainScreen').replaceChildren(...[hangmanLogoSaved, livesText, boxesHolderSaved]);
         secretWord = [];
         alreadyGivenCharacters = [];
         lives = 6;
         document.getElementById('wordThing').innerText = '';
         document.getElementById('livesText').className = 'hidden';
-        let periexomenoSaved = document.getElementById('boxesHolder').children[1],
-            boxesHolderSaved = document.getElementById('boxesHolder'),
-            hangmanLogoSaved = document.getElementById('mainScreen').children[0];
-
-        document.getElementById('mainScreen').removeAttribute('style');
         document.getElementById('boxesHolder').replaceChildren(...[periexomenoSaved, hintText]);
         document.getElementById('boxesHolder').style.display = ''; // bug fix
-        document.getElementById('mainScreen').replaceChildren(...[hangmanLogoSaved, livesText, boxesHolderSaved]);
+
         document.getElementById('periexomeno').removeAttribute('style');
         document.getElementById('periexomeno').replaceChildren(...[wordInput, startButton]);
         music.menu.play();
@@ -101,6 +98,10 @@
     }
 
     const showResetMenuButtons = (type) => {
+        periexomenoSaved = document.getElementById('boxesHolder').children[1],
+            boxesHolderSaved = document.getElementById('boxesHolder'),
+            hangmanLogoSaved = document.getElementById('mainScreen').children[0];
+
         music.level.pause();
         document.getElementById('mainScreen').style.display = 'flex';
         document.getElementById('mainScreen').style.justifyContent = 'center';
