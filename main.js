@@ -74,7 +74,6 @@
     let startButton = document.createElement('button');
     startButton.appendChild(document.createTextNode('Play'));
     startButton.id = 'startButton';
-    startButton.onclick = setup;
     wordInput.addEventListener('keydown', (e) => {
         if (e.keyCode == 13 && !gameStarted) {
             document.getElementById('startButton').click();
@@ -257,6 +256,7 @@
         // ---------------------------------------------------------------------------------------
         window.requestAnimationFrame(gameLoop);
     } // end of setup
+    startButton.onclick = setup; // bug fix
 
     addToPage(wordInput);
     addToPage(startButton);
