@@ -46,13 +46,48 @@
     hintText.appendChild(document.createTextNode('Πατήστε το κουμπί «Play» ή πατήστε το πλήκτρο «Enter» για να αρχίσετε το παιχνίδι.'));
 
     let gameLoop = () => {
-        if (!secretWord.includes('_')) {
-            alert('win');
-            window.cancelAnimationFrame(gameLoop);
-            return;
+        switch (true) {
+            // Περίπτωση νίκης. (Βρέθηκε η λέξη)
+            case !secretWord.includes('_'):
+                window.cancelAnimationFrame(gameLoop);
+                resetMenu();
+                return;
+
+            // Περίπτωση που έχασε ο παίχτης (όχι άλλες ζωές)
+            case lives == 0:
+                window.cancelAnimationFrame(gameLoop);
+                resetMenu();
+                return;
         }
 
         window.requestAnimationFrame(() => gameLoop());
+    }
+
+    // Πλαίσιο για να εισάγεται η λέξη στην αρχή.
+    let chosenWord;
+
+    let wordInput = document.createElement('input');
+    wordInput.type = 'text';
+    wordInput.id = 'wordInput';
+    wordInput.placeholder = 'Εισάγετε μία λέξη εδώ..';
+    // Play Button
+    let startButton = document.createElement('button');
+    startButton.appendChild(document.createTextNode('Play'));
+    startButton.id = 'startButton';
+    startButton.onclick = setup;
+    wordInput.addEventListener('keydown', (e) => {
+        if (e.keyCode == 13 && !gameStarted) {
+            document.getElementById('startButton').click();
+        }
+    });
+
+    const resetMenu = () => {
+        document.getElementById('livesText').className = 'hidden';
+        let periexomenoSaved = document.getElementById('boxesHolder').children[0];
+        document.getElementById('mainScreen').removeAttribute('style');
+        document.getElementById('boxesHolder').replaceChildren(...[periexomenoSaved, hintText]);
+        addToPage(wordInput);
+        addToPage(startButton);
     }
 
     const setup = () => {
@@ -115,20 +150,6 @@
 
         document.getElementById('boxesHolder').style.display = 'flex'; // bug fix
         document.getElementById('boxesHolder').appendChild(hangmanImageBox);
-
-        // ---------------------------------------------------------------------------------------
-        let listToShuffle = [];
-        let parentDiv = document.getElementById('boxesHolder');
-
-        // Για κάθε "παιδί" που έχει το cardsHolder/parentDiv
-        for (var e = 0; e < parentDiv.children.length; e++) listToShuffle.push(parentDiv.children[e]);
-
-        let temp = listToShuffle[0];
-        listToShuffle[0] = listToShuffle[1];
-        listToShuffle[1] = temp;
-
-        parentDiv.replaceChildren(...listToShuffle);
-        // ---------------------------------------------------------------------------------------
 
         mainScreen.appendChild(lettersThatNotInWordText);
         // =======================================================================
@@ -221,26 +242,21 @@
         gameStarted = true;
         music.menu.pause();
         music.level.play();
+        // ---------------------------------------------------------------------------------------
+        let listToShuffle = [];
+        let parentDiv = document.getElementById('boxesHolder');
+
+        // Για κάθε "παιδί" που έχει το cardsHolder/parentDiv
+        for (var e = 0; e < parentDiv.children.length; e++) listToShuffle.push(parentDiv.children[e]);
+
+        let temp = listToShuffle[0];
+        listToShuffle[0] = listToShuffle[1];
+        listToShuffle[1] = temp;
+
+        parentDiv.replaceChildren(...listToShuffle);
+        // ---------------------------------------------------------------------------------------
         window.requestAnimationFrame(gameLoop);
     } // end of setup
-
-    // Πλαίσιο για να εισάγεται η λέξη στην αρχή.
-    let chosenWord;
-
-    let wordInput = document.createElement('input');
-    wordInput.type = 'text';
-    wordInput.id = 'wordInput';
-    wordInput.placeholder = 'Εισάγετε μία λέξη εδώ..';
-    // Play Button
-    let startButton = document.createElement('button');
-    startButton.appendChild(document.createTextNode('Play'));
-    startButton.id = 'startButton';
-    startButton.onclick = setup;
-    wordInput.addEventListener('keydown', (e) => {
-        if (e.keyCode == 13 && !gameStarted) {
-            document.getElementById('startButton').click();
-        }
-    });
 
     addToPage(wordInput);
     addToPage(startButton);
