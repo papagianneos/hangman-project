@@ -104,6 +104,7 @@
         document.getElementById('mainScreen').replaceChildren(...[hangmanLogoSaved, livesTextSaved, boxesHolderSaved]);
         document.getElementById('periexomeno').removeAttribute('style');
         document.getElementById('periexomeno').replaceChildren(...[wordInput, startButton]);
+        document.getElementById('livesText').removeAttribute('style');
         document.getElementsByClassName('text hangman')[0].removeAttribute('style');
         music.menu.play();
         gameStarted = false;
