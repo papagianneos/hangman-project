@@ -129,7 +129,10 @@
         for (var child of document.getElementById('mainScreen').children) child.style.display = 'none';
         document.getElementById('mainScreen').appendChild(holder);
 
-        if (type == 'loss') music.defeat.play();
+        if (type == 'loss') {
+            music.defeat.play();
+        }
+        else music.win.play();
     }
 
     const setup = () => {
