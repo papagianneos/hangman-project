@@ -89,9 +89,8 @@
         document.getElementById('mainScreen').removeAttribute('style');
         document.getElementById('boxesHolder').replaceChildren(...[periexomenoSaved, hintText]);
         document.getElementById('mainScreen').replaceChildren(...[hangmanLogoSaved, livesText, boxesHolderSaved]);
-        periexomenoSaved.style.width = '100%';
-        addToPage(wordInput);
-        addToPage(startButton);
+        document.getElementById('periexomeno').removeAttribute('style');
+        document.getElementById('periexomeno').replaceChildren(...[wordInput, startButton]);
         music.level.pause();
         music.menu.play();
         gameStarted = false;
