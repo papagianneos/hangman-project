@@ -48,9 +48,10 @@
     let gameLoop = () => {
         if (!secretWord.includes('_')) {
             alert('win');
-            window.cancelAnimationFrame(() => gameLoop());
+            window.cancelAnimationFrame(gameLoop);
+            return;
         }
-        
+
         window.requestAnimationFrame(() => gameLoop());
     }
 
@@ -114,6 +115,21 @@
 
         document.getElementById('boxesHolder').style.display = 'flex'; // bug fix
         document.getElementById('boxesHolder').appendChild(hangmanImageBox);
+
+        // ---------------------------------------------------------------------------------------
+        let listToShuffle = [];
+        let parentDiv = document.getElementById('boxesHolder');
+
+        // Για κάθε "παιδί" που έχει το cardsHolder/parentDiv
+        for (var e = 0; e < parentDiv.children.length; e++) listToShuffle.push(parentDiv.children[e]);
+
+        let temp = listToShuffle[0];
+        listToShuffle[0] = listToShuffle[1];
+        listToShuffle[1] = temp;
+
+        parentDiv.replaceChildren(...listToShuffle);
+        // ---------------------------------------------------------------------------------------
+
         mainScreen.appendChild(lettersThatNotInWordText);
         // =======================================================================
 
