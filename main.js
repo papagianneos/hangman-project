@@ -104,15 +104,20 @@
     const showResetMenuButtons = (type) => {
         document.getElementById('mainScreen').style.display = 'flex';
         document.getElementById('mainScreen').style.justifyContent = 'center';
+        document.getElementById('mainScreen').style.backgroundColor = 'rgba(0, 0, 0, .15)';
 
+        let holder = document.createElement('div');
+        
         let text = document.createElement('h2');
-        text.appendChild(document.createTextNode(type == 'win' ? 'YOU WIN!' : 'You were burned.'));
+        text.appendChild(document.createTextNode(type == 'win' ? 'YOU FOUND THE WORD!' : 'You were burned.'));
 
         let playAgainButton = document.createElement('button');
         playAgainButton.appendChild(document.createTextNode('Play Again'));
         playAgainButton.onclick = resetMenu;
 
-        document.getElementById('mainScreen').replaceChildren(...[text]);
+        holder.appendChild(text);
+        holder.appendChild(playAgainButton);
+        document.getElementById('mainScreen').replaceChildren(...[holder]);
     }
 
     const setup = () => {
