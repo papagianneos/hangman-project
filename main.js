@@ -11,6 +11,12 @@
         level: new Howl({
             src: ['/hangman_theme.mp3'],
             loop: true
+        }),
+        defeat: new Howl({
+            src: ['/defeat.wav']
+        }),
+        win: new Howl({
+            src: ['/win.mp3']
         })
     }
 
@@ -122,6 +128,8 @@
         holder.appendChild(playAgainButton);
         for (var child of document.getElementById('mainScreen').children) child.style.display = 'none';
         document.getElementById('mainScreen').appendChild(holder);
+
+        if (type == 'loss') music.defeat.play();
     }
 
     const setup = () => {
