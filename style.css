@@ -57,11 +57,13 @@ body {
     justify-content: center;
 }
 
+button {
+    cursor: pointer;
+    font-size: 20px;
+}
 
 #startButton {
     width: 50%;
-    cursor: pointer;
-    font-size: 20px;
 }
 
 #wordInput {
