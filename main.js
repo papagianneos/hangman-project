@@ -119,7 +119,7 @@
 
         holder.appendChild(text);
         holder.appendChild(playAgainButton);
-        for (var child of odcument.getElementById('mainScreen').children) child.style.display = 'none';
+        for (var child of document.getElementById('mainScreen').children) child.style.display = 'none';
         document.getElementById('mainScreen').appendChild(holder);
     }
 
