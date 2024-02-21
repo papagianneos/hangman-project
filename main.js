@@ -96,18 +96,18 @@
         document.getElementById('mainScreen').replaceChildren(...[hangmanLogoSaved, livesText, boxesHolderSaved]);
         document.getElementById('periexomeno').removeAttribute('style');
         document.getElementById('periexomeno').replaceChildren(...[wordInput, startButton]);
-        music.level.pause();
         music.menu.play();
         gameStarted = false;
     }
 
     const showResetMenuButtons = (type) => {
+        music.level.pause();
         document.getElementById('mainScreen').style.display = 'flex';
         document.getElementById('mainScreen').style.justifyContent = 'center';
         document.getElementById('mainScreen').style.backgroundColor = 'rgba(0, 0, 0, .15)';
 
         let holder = document.createElement('div');
-        
+
         let text = document.createElement('h2');
         text.appendChild(document.createTextNode(type == 'win' ? 'YOU FOUND THE WORD!' : 'You were burned.'));
 
