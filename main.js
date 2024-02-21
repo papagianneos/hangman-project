@@ -82,9 +82,10 @@
 
     const resetMenu = () => {
         document.getElementById('livesText').className = 'hidden';
-        let periexomenoSaved = document.getElementById('boxesHolder').children[0];
+        let periexomenoSaved = document.getElementById('boxesHolder').children[1];
         document.getElementById('mainScreen').removeAttribute('style');
         document.getElementById('boxesHolder').replaceChildren(...[periexomenoSaved, hintText]);
+        periexomenoSaved.removeAttribute('style');
         addToPage(wordInput);
         addToPage(startButton);
     }
