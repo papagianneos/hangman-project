@@ -90,7 +90,11 @@
         hangmanImageBox.style.width = '50%';
         hangmanImageBox.style.margin = '5px';
         hangmanImageBox.style.borderRadius = '5px';
-        hangmanImageBox.style.backgroundColor = 'black';
+        hangmanImageBox.style.backgroundColor = 'rgba(0, 0, 0, .15)';
+
+        let hangmanImage = document.createElement('img');
+        hangmanImage.src = '/hangman frames/hangman0.png';
+        hangmanImageBox.appendChild(hangmanImage);
 
         let lettersThatNotInWordText = document.createElement('span');
         lettersThatNotInWordText.style.position = 'absolute';
