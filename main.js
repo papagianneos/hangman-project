@@ -1,5 +1,5 @@
 (() => {
-    let lives = 6, alreadyGivenCharacters = [], secretWord = [], periexomenoSaved, boxesHolderSaved, hangmanLogoSaved, livesTextSaved;
+    let lives = 6, alreadyGivenCharacters = [], secretWord = [];
 
     const ALLOWED_CHARACTERS = ' ΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩαβγδεζηθικλμνξοπρστυφχψωabcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'.split('');
 
@@ -87,6 +87,12 @@
         document.getElementById('wordThing').innerText = '';
         document.getElementById('livesText').className = 'hidden';
         document.getElementById('mainScreen').removeAttribute('style');
+
+        let periexomenoSaved = document.getElementById('boxesHolder').children[1],
+            boxesHolderSaved = document.getElementById('boxesHolder'),
+            hangmanLogoSaved = document.getElementById('mainScreen').children[0],
+            livesTextSaved = document.getElementById('mainScreen').children[1];
+
         document.getElementById('boxesHolder').replaceChildren(...[periexomenoSaved, hintText]);
         document.getElementById('boxesHolder').style.display = ''; // bug fix
         document.getElementById('mainScreen').replaceChildren(...[hangmanLogoSaved, livesTextSaved, boxesHolderSaved]);
@@ -97,11 +103,6 @@
     }
 
     const showResetMenuButtons = (type) => {
-        periexomenoSaved = document.getElementById('boxesHolder').children[1];
-        boxesHolderSaved = document.getElementById('boxesHolder');
-        hangmanLogoSaved = document.getElementById('mainScreen').children[0];
-        livesTextSaved = document.getElementById('mainScreen').children[1];
-
         music.level.pause();
         document.getElementById('mainScreen').style.display = 'flex';
         document.getElementById('mainScreen').style.justifyContent = 'center';
@@ -118,7 +119,8 @@
 
         holder.appendChild(text);
         holder.appendChild(playAgainButton);
-        document.getElementById('mainScreen').replaceChildren(...[holder]);
+        for (var child of odcument.getElementById('mainScreen').children) child.style.display = 'none';
+        document.getElementById('mainScreen').appendChild(holder);
     }
 
     const setup = () => {
