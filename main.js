@@ -1,5 +1,5 @@
 (() => {
-    let lives = 5, alreadyGivenCharacters = [], secretWord = [];
+    let lives = 6, alreadyGivenCharacters = [], secretWord = [];
 
     const ALLOWED_CHARACTERS = ' ΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩαβγδεζηθικλμνξοπρστυφχψωabcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'.split('');
 
@@ -158,6 +158,7 @@
                         source = 'hangman6';
                 }
                 hangmanImage.src = `/hangman frames/${source}.png`;
+                document.getElementById('livesText').innerText = `Lives: ${lives}`;
                 document.getElementById('notInWordThing').innerText += ` ${character.toUpperCase()} `;
             }
 
