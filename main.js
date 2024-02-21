@@ -45,6 +45,15 @@
     let hintText = document.createElement('span');
     hintText.appendChild(document.createTextNode('Πατήστε το κουμπί «Play» ή πατήστε το πλήκτρο «Enter» για να αρχίσετε το παιχνίδι.'));
 
+    let gameLoop = () => {
+        if (!secretWord.includes('_')) {
+            alert('win');
+            window.cancelAnimationFrame(() => gameLoop());
+        }
+        
+        window.requestAnimationFrame(() => gameLoop());
+    }
+
     const setup = () => {
         if (gameStarted) return;
 
@@ -196,7 +205,8 @@
         gameStarted = true;
         music.menu.pause();
         music.level.play();
-    }
+        window.requestAnimationFrame(gameLoop);
+    } // end of setup
 
     // Πλαίσιο για να εισάγεται η λέξη στην αρχή.
     let chosenWord;
