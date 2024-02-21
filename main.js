@@ -245,7 +245,7 @@
             }
         }
         for (var letter of secretWord) word += letter;
-        document.getElementById('wordThing').innerText = word;
+        wordThing.innerText = word;
 
         removeFromPage(startButton);
         removeFromPage(wordInput);
