@@ -1,5 +1,5 @@
 (() => {
-    let lives = 6, alreadyGivenCharacters = [], secretWord = [], periexomenoSaved, boxesHolderSaved, hangmanLogoSaved;
+    let lives = 6, alreadyGivenCharacters = [], secretWord = [], periexomenoSaved, boxesHolderSaved, hangmanLogoSaved, livesTextSaved;
 
     const ALLOWED_CHARACTERS = ' ΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩαβγδεζηθικλμνξοπρστυφχψωabcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'.split('');
 
@@ -81,16 +81,15 @@
     });
 
     const resetMenu = () => {
-        document.getElementById('mainScreen').removeAttribute('style');
-        document.getElementById('mainScreen').replaceChildren(...[hangmanLogoSaved, livesText, boxesHolderSaved]);
         secretWord = [];
         alreadyGivenCharacters = [];
         lives = 6;
         document.getElementById('wordThing').innerText = '';
         document.getElementById('livesText').className = 'hidden';
+        document.getElementById('mainScreen').removeAttribute('style');
         document.getElementById('boxesHolder').replaceChildren(...[periexomenoSaved, hintText]);
         document.getElementById('boxesHolder').style.display = ''; // bug fix
-
+        document.getElementById('mainScreen').replaceChildren(...[hangmanLogoSaved, livesTextSaved, boxesHolderSaved]);
         document.getElementById('periexomeno').removeAttribute('style');
         document.getElementById('periexomeno').replaceChildren(...[wordInput, startButton]);
         music.menu.play();
@@ -98,9 +97,10 @@
     }
 
     const showResetMenuButtons = (type) => {
-        periexomenoSaved = document.getElementById('boxesHolder').children[1],
-            boxesHolderSaved = document.getElementById('boxesHolder'),
-            hangmanLogoSaved = document.getElementById('mainScreen').children[0];
+        periexomenoSaved = document.getElementById('boxesHolder').children[1];
+        boxesHolderSaved = document.getElementById('boxesHolder');
+        hangmanLogoSaved = document.getElementById('mainScreen').children[0];
+        livesTextSaved = document.getElementById('mainScreen').children[1];
 
         music.level.pause();
         document.getElementById('mainScreen').style.display = 'flex';
