@@ -89,9 +89,12 @@
         document.getElementById('mainScreen').removeAttribute('style');
         document.getElementById('boxesHolder').replaceChildren(...[periexomenoSaved, hintText]);
         document.getElementById('mainScreen').replaceChildren(...[hangmanLogoSaved, livesText, boxesHolderSaved]);
-        periexomenoSaved.removeAttribute('style');
+        periexomenoSaved.style.width = '100%';
         addToPage(wordInput);
         addToPage(startButton);
+        music.level.pause();
+        music.menu.play();
+        gameStarted = false;
     }
 
     const setup = () => {
