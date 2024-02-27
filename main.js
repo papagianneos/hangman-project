@@ -80,7 +80,7 @@
     let startButton = document.createElement('button');
     startButton.appendChild(document.createTextNode('Play'));
     startButton.id = 'startButton';
-    wordInput.addEventListener('keydown', (e) => {
+    document.addEventListener('keydown', (e) => {
         if (e.keyCode == 13 && !gameStarted) {
             document.getElementById('startButton').click();
         }
