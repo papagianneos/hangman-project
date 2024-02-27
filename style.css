@@ -35,7 +35,7 @@ body {
 .hangman {
     color: black;
     background-color: darkblue;
-    background-image: repeating-linear-gradient(45deg, white, transparent 50px)
+    background-image: repeating-linear-gradient(15deg, RGB(0, 204, 255), transparent 25px);
 }
 
 #boxesHolder {
@@ -64,6 +64,7 @@ body {
 button {
     cursor: pointer;
     font-size: 20px;
+    background-image: repeating-linear-gradient(15deg, RGB(0, 204, 255), transparent 25px)
 }
 
 #startButton {
