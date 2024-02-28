@@ -173,7 +173,7 @@
         wordContentBox.style.width = '50%';
         wordContentBox.style.margin = '5px';
         wordContentBox.style.borderRadius = '5px';
-        wordContentBox.style.backgroundColor = 'rgba(0, 0, 0, .15)';
+        wordContentBox.style.backgroundColor = 'rgba(128, 223, 255,0.5)';
 
         let hangmanImageBox = document.createElement('div');
         hangmanImageBox.id = 'hangmanImageBox';
@@ -181,7 +181,7 @@
         hangmanImageBox.style.width = '50%';
         hangmanImageBox.style.margin = '5px';
         hangmanImageBox.style.borderRadius = '5px';
-        hangmanImageBox.style.backgroundColor = 'rgba(0, 0, 0, .15)';
+        hangmanImageBox.style.backgroundColor = 'rgba(128, 223, 255,0.5)';
 
         let hangmanImage = document.createElement('img');
         hangmanImage.src = '/hangman frames/hangman0.png';
