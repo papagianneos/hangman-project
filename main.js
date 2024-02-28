@@ -84,7 +84,7 @@
         if (e.keyCode == 13 && !gameStarted) {
             document.getElementById('startButton').click();
         }
-        else if (lost) {
+        else if (e.keyCode == 13 && lost) {
             document.getElementById('resetButton').click();
         }
     });
