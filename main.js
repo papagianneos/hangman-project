@@ -1,5 +1,5 @@
 (() => {
-    let lives = 6, alreadyGivenCharacters = [], secretWord = [];
+    let lives = 6, alreadyGivenCharacters = [], secretWord = [], lost = false;
 
     const ALLOWED_CHARACTERS = ' ΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩαβγδεζηθικλμνξοπρστυφχψωabcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'.split('');
 
@@ -84,12 +84,16 @@
         if (e.keyCode == 13 && !gameStarted) {
             document.getElementById('startButton').click();
         }
+        else if (lost) {
+            document.getElementById('resetButton').click();
+        }
     });
 
     const resetMenu = () => {
         secretWord = [];
         alreadyGivenCharacters = [];
         lives = 6;
+        lost = false;
         document.getElementById('wordThing').innerText = '';
         document.getElementById('livesText').className = 'hidden';
         document.getElementById('mainScreen').removeAttribute('style');
@@ -123,6 +127,7 @@
 
         let playAgainButton = document.createElement('button');
         playAgainButton.appendChild(document.createTextNode('Play Again'));
+        playAgainButton.id = 'resetButton';
         playAgainButton.onclick = resetMenu;
 
         holder.appendChild(text);
@@ -134,6 +139,7 @@
             music.defeat.play();
         }
         else music.win.play();
+        lost = true;
     }
 
     const setup = () => {
