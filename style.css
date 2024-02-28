@@ -4,8 +4,7 @@ body {
     font: bold 18px Montserrat, sans-serif;
     user-select: none;
     overflow: hidden;
-    text-shadow: rgb(0 0 0 / 50%) 2px 2px
-}
+    text-shadow: rgb(255 255 255 / 49%) 2px 2px;
 
 #mainScreen {
     width: 500px;
