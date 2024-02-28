@@ -1,6 +1,6 @@
 body {
     color: black;
-    background: black;
+    background: radial-gradient(black, #25294b);
     font: bold 18px Montserrat, sans-serif;
     user-select: none;
     overflow: hidden;
