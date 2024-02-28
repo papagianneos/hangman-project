@@ -187,6 +187,7 @@
         hangmanImage.src = '/hangman frames/hangman0.png';
         hangmanImageBox.appendChild(hangmanImage);
         hangmanImage.id = 'hangman';
+        hangmanimage.setAttribute('draggable', 'false');
 
         let lettersThatNotInWordText = document.createElement('span');
         lettersThatNotInWordText.style.position = 'absolute';
