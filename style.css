@@ -5,6 +5,11 @@ body {
     user-select: none;
     overflow: hidden;
     text-shadow: rgb(255 255 255 / 49%) 2px 2px;
+}
+
+keimenaki {
+    font-size: 13px;
+}
 
 #mainScreen {
     width: 500px;
