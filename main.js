@@ -50,6 +50,7 @@
 
     let hintText = document.createElement('span');
     hintText.appendChild(document.createTextNode('Πατήστε το κουμπί «Play» ή πατήστε το πλήκτρο «Enter» για να αρχίσετε το παιχνίδι.'));
+    hintText.innerHTML += `<br>ΤΑΡΑΜΟΝΛΗΣ ΣΤΕΦΑΝΟΣ - ΠΑΠΑΓΙΑΝΝΗΣ ΣΩΤΗΡΙΟΣ<br>3ο ΓΕΛ ΒΕΡΟΙΑΣ 2023-24`;
 
     let gameLoop = () => {
         switch (true) {
