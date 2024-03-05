@@ -9,6 +9,8 @@ body {
 
 keimenaki {
     font-size: 13px;
+    position: relative;
+    top: 12px;
 }
 
 #mainScreen {
