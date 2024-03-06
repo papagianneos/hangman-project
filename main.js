@@ -77,6 +77,7 @@
     wordInput.type = 'text';
     wordInput.id = 'wordInput';
     wordInput.placeholder = 'Εισάγετε μία λέξη εδώ..';
+    wordInput.setAttribute('maxlength', '20'); // μέχρι 20 χαρακτήρες.
     // Play Button
     let startButton = document.createElement('button');
     startButton.appendChild(document.createTextNode('Play'));
@@ -155,6 +156,11 @@
             return;
         }
 
+        else if (chosenWord.length > 20) { // Περίπτωση πολύ μεγάλης λέξης.
+            alert('Η λέξη δεν πρέπει να ξεπερνάει τους 20 χαρακτήρες (μαζί με κενά)');
+            return;
+        }
+        
         // Δες αν η λέξη περιέχει χαρακτήρα που δεν επιτρέπεται.
         for (var character_ of chosenWord.split('')) {
             if (!(ALLOWED_CHARACTERS.indexOf(character_) in ALLOWED_CHARACTERS)) {
