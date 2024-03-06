@@ -169,20 +169,20 @@
         // =======================================================================
         // ANIMATION
         // =======================================================================
-        let mainScreen = document.getElementById('mainScreen');
+        const mainScreen = document.getElementById('mainScreen');
         mainScreen.style.transition = '1s';
         mainScreen.style.width = '100%';
         mainScreen.style.height = '100%';
         mainScreen.style.borderRadius = '0';
 
-        let wordContentBox = document.getElementById('periexomeno');
+        const wordContentBox = document.getElementById('periexomeno');
         wordContentBox.style.transition = '1s';
         wordContentBox.style.width = '50%';
         wordContentBox.style.margin = '5px';
         wordContentBox.style.borderRadius = '5px';
         wordContentBox.style.backgroundColor = 'rgba(128, 223, 255,0.5)';
 
-        let hangmanImageBox = document.createElement('div');
+        const hangmanImageBox = document.createElement('div');
         hangmanImageBox.id = 'hangmanImageBox';
         hangmanImageBox.className = 'box';
         hangmanImageBox.style.width = '50%';
@@ -190,13 +190,13 @@
         hangmanImageBox.style.borderRadius = '5px';
         hangmanImageBox.style.backgroundColor = 'rgba(128, 223, 255,0.5)';
 
-        let hangmanImage = document.createElement('img');
+        const hangmanImage = document.createElement('img');
         hangmanImage.src = '/hangman frames/hangman0.png';
         hangmanImageBox.appendChild(hangmanImage);
         hangmanImage.id = 'hangman';
         hangmanImage.setAttribute('draggable', 'false');
 
-        let lettersThatNotInWordText = document.createElement('span');
+        const lettersThatNotInWordText = document.createElement('span');
         lettersThatNotInWordText.style.position = 'absolute';
         lettersThatNotInWordText.style.bottom = '100px';
         lettersThatNotInWordText.style.fontSize = '50px';
