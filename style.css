@@ -43,6 +43,7 @@ keimenaki {
     color: black;
     background-color: darkblue;
     background-image: repeating-linear-gradient(15deg, RGB(0, 204, 255), transparent 25px);
+    text-shadow: black 5px 4px 3px;
 }
 
 #boxesHolder {
