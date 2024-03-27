@@ -57,13 +57,13 @@
             // Περίπτωση νίκης. (Βρέθηκε η λέξη)
             case !secretWord.includes('_'):
                 window.cancelAnimationFrame(gameLoop);
-                setTimeout(() => showResetMenuButtons('win'), 1500);
+                setTimeout(() => showResetMenuButtons('win'), 700);
                 return;
 
             // Περίπτωση που έχασε ο παίχτης (όχι άλλες ζωές)
             case lives == 0:
                 window.cancelAnimationFrame(gameLoop);
-                setTimeout(() => showResetMenuButtons('loss'), 1500);
+                setTimeout(() => showResetMenuButtons('loss'), 700);
                 return;
         }
 
