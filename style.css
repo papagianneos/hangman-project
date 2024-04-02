@@ -27,6 +27,12 @@ keimenaki {
     border-radius: 5%;
 }
 
+#btnHolder {
+    width: 100%;
+    height: auto;
+    display: contents;
+}
+
 #notInWordThing {
     transform: translateX(-50%);
 }
