@@ -95,9 +95,9 @@
     let howToPlayButton = document.createElement('button');
     howToPlayButton.appendChild(document.createTextNode('How To Play'));
     howToPlayButton.id = 'howToPlayBtn';
-    document.addEventListener('keydown', (e) => {
+    howToPlayButton.onclick = () => {
         window.location.href = '/how-to-play.txt';
-    });
+    }
 
     const resetMenu = () => {
         secretWord = [];
