@@ -84,7 +84,12 @@ button:hover {
 }
 
 #startButton {
-    width: 50%;
+    width: 300px;
+}
+
+#howToPlayBtn {
+    width: 250px;
+    background-image: repeating-linear-gradient(15deg, black, transparent 100px);
 }
 
 #wordInput {
