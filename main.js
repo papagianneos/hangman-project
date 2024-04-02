@@ -73,13 +73,17 @@
     // Πλαίσιο για να εισάγεται η λέξη στην αρχή.
     let chosenWord;
 
-    let wordInput = document.createElement('input');
+    const wordInput = document.createElement('input');
     wordInput.type = 'text';
     wordInput.id = 'wordInput';
     wordInput.placeholder = 'Εισάγετε μία λέξη εδώ..';
     wordInput.setAttribute('maxlength', '20'); // μέχρι 20 χαρακτήρες.
+
+    const buttonsHolder = document.createElement('div');
+    buttonsHolder.id = 'btnHolder';
+
     // Play Button
-    let startButton = document.createElement('button');
+    const startButton = document.createElement('button');
     startButton.appendChild(document.createTextNode('Play'));
     startButton.id = 'startButton';
     document.addEventListener('keydown', (e) => {
@@ -92,7 +96,7 @@
     });
 
      // How To Play Button
-    let howToPlayButton = document.createElement('button');
+    const howToPlayButton = document.createElement('button');
     howToPlayButton.appendChild(document.createTextNode('How To Play'));
     howToPlayButton.id = 'howToPlayBtn';
     howToPlayButton.onclick = () => {
@@ -117,7 +121,7 @@
         document.getElementById('boxesHolder').style.display = ''; // bug fix
         document.getElementById('mainScreen').replaceChildren(...[hangmanLogoSaved, livesTextSaved, boxesHolderSaved]);
         document.getElementById('periexomeno').removeAttribute('style');
-        document.getElementById('periexomeno').replaceChildren(...[wordInput, startButton, howToPlayButton]);
+        document.getElementById('periexomeno').replaceChildren(...[wordInput, buttonsHolder]);
         document.getElementById('livesText').removeAttribute('style');
         document.getElementsByClassName('text hangman')[0].removeAttribute('style');
         music.menu.play();
@@ -305,8 +309,7 @@
         for (var letter of secretWord) word += letter;
         wordThing.innerText = word;
 
-        removeFromPage(startButton);
-        removeFromPage(howToPlayButton);
+        removeFromPage(buttonsHolder);
         removeFromPage(wordInput);
         document.getElementById('boxesHolder').removeChild(hintText);
         addToPage(wordThing);
@@ -331,7 +334,8 @@
     startButton.onclick = setup; // bug fix
 
     addToPage(wordInput);
-    addToPage(startButton);
-    addToPage(howToPlayButton);
+    buttonsHolder.appendChild(startButton);
+    buttonsHolder.appendChild(howToPlayButton);
+    addToPage(buttonsHolder);
     document.getElementById('boxesHolder').appendChild(hintText);
 })();
