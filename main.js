@@ -96,7 +96,7 @@
     howToPlayButton.appendChild(document.createTextNode('How To Play'));
     howToPlayButton.id = 'howToPlayBtn';
     howToPlayButton.onclick = () => {
-        window.location.href = '/how-to-play.txt';
+        window.open('/how-to-play.txt');
     }
 
     const resetMenu = () => {
