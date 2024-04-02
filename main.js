@@ -96,7 +96,7 @@
     howToPlayButton.appendChild(document.createTextNode('How To Play'));
     howToPlayButton.id = 'howToPlayBtn';
     document.addEventListener('keydown', (e) => {
-        // TO DO
+        window.location.href = '/how-to-play.txt';
     });
 
     const resetMenu = () => {
