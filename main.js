@@ -91,6 +91,14 @@
         }
     });
 
+     // How To Play Button
+    let howToPlayButton = document.createElement('button');
+    howToPlayButton.appendChild(document.createTextNode('How To Play'));
+    howToPlayButton.id = 'howToPlayBtn';
+    document.addEventListener('keydown', (e) => {
+        // TO DO
+    });
+
     const resetMenu = () => {
         secretWord = [];
         alreadyGivenCharacters = [];
@@ -298,6 +306,7 @@
         wordThing.innerText = word;
 
         removeFromPage(startButton);
+        removeFromPage(howToPlayButton);
         removeFromPage(wordInput);
         document.getElementById('boxesHolder').removeChild(hintText);
         addToPage(wordThing);
@@ -323,5 +332,6 @@
 
     addToPage(wordInput);
     addToPage(startButton);
+    addToPage(howToPlayButton);
     document.getElementById('boxesHolder').appendChild(hintText);
 })();
