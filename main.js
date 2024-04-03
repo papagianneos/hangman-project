@@ -230,7 +230,7 @@
         // =======================================================================
         // Δες αν το πλήκτρο που πάτησε ο παίχτης είναι γράμμα της λέξης..
         // =======================================================================
-        document.addEventListener('keydown', (e) => {
+        document.addEventListener('keypress', (e) => {
             if (!gameStarted) return;
             /*var keyNumber;
             if (window.event) {
