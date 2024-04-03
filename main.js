@@ -232,13 +232,13 @@
         // =======================================================================
         document.addEventListener('keydown', (e) => {
             if (!gameStarted) return;
-            var keyNumber;
+            /*var keyNumber;
             if (window.event) {
                 keyNumber = e.keyCode;
             }
-            else if (e.which) keyNumber = e.which;
+            else if (e.which) keyNumber = e.which;*/
 
-            var character = String.fromCharCode(keyNumber).toLowerCase(); // μετατροπή σε string
+            var character = String.fromCharCode(event.which).toLowerCase(); // μετατροπή σε string
 
             // Αν είναι ο ίδιος χαρακτήρας με πριν μην κάνεις τίποτα.
             if (alreadyGivenCharacters.includes(character) || !(ALLOWED_CHARACTERS.indexOf(character) in ALLOWED_CHARACTERS)) return;
