@@ -87,10 +87,10 @@
     startButton.appendChild(document.createTextNode('Play'));
     startButton.id = 'startButton';
     document.addEventListener('keydown', (e) => {
-        if (e.keyCode == 13 && !gameStarted) {
+        if (e.key === "Enter" && !gameStarted) {
             document.getElementById('startButton').click();
         }
-        else if (e.keyCode == 13 && lost) {
+        else if (e.key === "Enter" && lost) {
             document.getElementById('resetButton').click();
         }
     });
@@ -238,7 +238,7 @@
             }
             else if (e.which) keyNumber = e.which;*/
 
-            var character = String.fromCharCode(event.which).toLowerCase(); // μετατροπή σε string
+            var character = event.key.replace('Key', '').replace('Digit', '').toLowerCase();//String.fromCharCode(event.which).toLowerCase(); // μετατροπή σε string
 
             // Αν είναι ο ίδιος χαρακτήρας με πριν μην κάνεις τίποτα.
             if (alreadyGivenCharacters.includes(character) || !(ALLOWED_CHARACTERS.indexOf(character) in ALLOWED_CHARACTERS)) return;
